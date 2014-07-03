@@ -3,8 +3,7 @@ var Schema       = mongoose.Schema;
 
 var ChallengeSchema   = new Schema({
   desc: String,
-  viewable: String,
-  userid: ObjectId
+  viewable: String
 });
 
 module.exports = mongoose.model('Challenge', ChallengeSchema);

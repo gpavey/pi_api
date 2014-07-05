@@ -73,7 +73,8 @@ router.route('/:challenge_id')
         if (err)
           res.send(err);
 
-        res.json(users);
+        res.json(users.creator.first_name);
+        
       })
   })
 

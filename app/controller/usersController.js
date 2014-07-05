@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
-var User = require('../models/user.js')
+var Challenge = require('../models/models.js').Challenge;
+var User = require('../models/models.js').User;
 
 router.route('/')
 

@@ -8,9 +8,9 @@ var path       = require('path');
 
 var bodyParser = require('body-parser');
 var mongoose   = require('mongoose');
-var routes     = require('./app/routes/index');
-var challenges = require('./app/routes/challenges');
-var users      = require('./app/routes/users');
+var routes     = require('./app/controller/indexController');
+var challenges = require('./app/controller/challengesController');
+var users      = require('./app/controller/usersController');
 
 // connect to Mongo database
 mongoose.connect('localhost'); // connect to our database

@@ -17,7 +17,7 @@ var UserSchema   = new Schema({
 var ChallengeSchema   = new Schema({
   desc: String,
   viewable : String,
-  creator : {type: Schema.Types.ObjectId, ref: 'User'}  
+  userid : {type: Schema.Types.ObjectId, ref: 'User'}
 });
 
 

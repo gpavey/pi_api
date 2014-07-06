@@ -4,6 +4,9 @@ var router = express.Router();
 //var User  = require('../models/user.js');
 var Challenge = require('../models/models.js').Challenge;
 var User = require('../models/models.js').User;
+// var mongoose = require( 'mongoose' );
+// var Challenge = mongoose.model( 'Challenge' );
+// var User = mongoose.model( 'User' );
 
 router.route('/')
 
@@ -11,17 +14,14 @@ router.route('/')
   .post(function(req, res) {
 
     var userid = req.body.userid
-    var user = new User();
+    var xUser = new User();
 
-    User.findById(userid, function(err, user) {
-      if (err)
-        res.send(err);
-    });
+    xUser._id = req.body.userid;
 
     var challenge = new Challenge();    // create a new instance of the challenge model
     challenge.desc = req.body.desc;  // set the challenges desc (comes from the request)
     challenge.viewable = req.body.viewable; 
-    challenge.creator = user;
+    challenge.userid = xUser;
 
     challenge.save(function(err) {
       if (err)
@@ -48,34 +48,17 @@ router.route('/:challenge_id')
 
   // get the challenge with that id (accessed at GET http://localhost:8080/api/challenges/:challenge_id)
   .get(function(req, res) {
-    // Challenge.findById(req.params.challenge_id, function(err, challenge) {
-    //   if (err)
-    //     res.send(err);
-    //   res.json(challenge);
-    // });
-    // Challenge
-    // .findOne({_id: req.params.challenge_id})
-    // .populate('creator', 'first_name')
-    // .exec(function(err, challenge){
-    //   if (err)
-    //     res.send(err);
-
-    //   //res.json(challenge);
-    //   res.json(challenge);
-    // })
 
     Challenge
-      .findOne({_id: req.params.challenge_id})
-      .populate({
-        path:'creator'
-      , select: 'first_name'})
-      .exec(function(err, users){
-        if (err)
-          res.send(err);
-
-        res.json(users.creator.first_name);
-        
-      })
+    .findOne({_id: req.params.challenge_id})
+    .populate('userid')
+    .exec(function(err, challenge){
+      if (err){
+              res.send(err);
+      }else{   
+       res.json(challenge);
+    }
+    })
   })
 
   // update the challenge with this id (accessed at PUT http://localhost:8080/api/challenges/:challenge_id)

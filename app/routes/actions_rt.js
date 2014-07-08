@@ -61,68 +61,68 @@ router.route('/')
     });
   });
 
-// router.route('/pop/:action_id')
+router.route('/pop/:action_id')
 
-//   .get(function(req, res) {
+  .get(function(req, res) {
 
-//     Action
-//     .findOne({_id: req.params.action_id})
-//     .populate('creator')
-//     .exec(function(err, action){
-//       if (err){
-//               res.send(err);
-//       }else{   
-//        res.json(action);
-//     }
-//     })
-//   })
+    Action
+    .findOne({_id: req.params.action_id})
+    .populate('creator user')
+    .exec(function(err, action){
+      if (err){
+              res.send(err);
+      }else{   
+       res.json(action);
+    }
+    })
+  })
 
 // //on routes that end in /actions/:action_id
 // //----------------------------------------------------
-// router.route('/:action_id')
+router.route('/:action_id')
 
-//   // get the action with that id (accessed at GET http://localhost:8080/api/actions/:action_id)
-//   .get(function(req, res) {
+  // get the action with that id (accessed at GET http://localhost:8080/api/actions/:action_id)
+  .get(function(req, res) {
 
-//     Action.findById(req.params.action_id, function(err, user) {
-//       if (err)
-//         res.send(err);
-//       res.json(user);
-//     });
-//   })
+    Action.findById(req.params.action_id, function(err, user) {
+      if (err)
+        res.send(err);
+      res.json(user);
+    });
+  })
 
-//   // update the action with this id (accessed at PUT http://localhost:8080/api/s/:action_id)
-//   .put(function(req, res) {
+  // update the action with this id (accessed at PUT http://localhost:8080/api/s/:action_id)
+  .put(function(req, res) {
 
-//     // use our action model to find the action we want
-//     Action.findById(req.params.action_id, function(err, action) {
+    // use our action model to find the action we want
+    Action.findById(req.params.action_id, function(err, action) {
 
-//       if (err)
-//         res.send(err);
+      if (err)
+        res.send(err);
 
-//       action.viewable = req.body.viewable;
+      action.viewable = req.body.viewable;
 
-//       // save the action
-//       action.save(function(err) {
-//         if (err)
-//           res.send(err);
+      // save the action
+      action.save(function(err) {
+        if (err)
+          res.send(err);
 
-//         res.json({ message: 'Action updated!' });
-//       });
+        res.json({ message: 'Action updated!' });
+      });
 
-//     });
-//   })
+    });
+  })
 
-//   // delete the action with this id (accessed at DELETE http://localhost:8080/api/actions/:action_id)
-//   .delete(function(req, res) {
-//     Action.remove({
-//       _id: req.params.action_id
-//     }, function(err, action) {
-//       if (err)
-//         res.send(err);
+  // delete the action with this id (accessed at DELETE http://localhost:8080/api/actions/:action_id)
+  .delete(function(req, res) {
+    Action.remove({
+      _id: req.params.action_id
+    }, function(err, action) {
+      if (err)
+        res.send(err);
 
-//       res.json({ message: 'Action successfully deleted' });
-//     });
-//   });
+      res.json({ message: 'Action successfully deleted' });
+    });
+  });
 
 module.exports = router;

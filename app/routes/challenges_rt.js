@@ -15,7 +15,7 @@ router.route('/')
     var challenge = new Challenge();    // create a new instance of the challenge model
     
     challenge.desc = req.body.desc;  // set the challenges desc (comes from the request) 
-    challenge.creator_id = xUser;
+    challenge.creator = xUser;
     challenge.join_count = req.body.join_count;
     challenge.endorse_count = req.body.endorse_count;
     challenge.highfive_count  = req.body.highfive_count;
@@ -49,7 +49,7 @@ router.route('/:challenge_id')
 
     Challenge
     .findOne({_id: req.params.challenge_id})
-    .populate('creator_id')
+    .populate('creator')
     .exec(function(err, challenge){
       if (err){
               res.send(err);

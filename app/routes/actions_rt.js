@@ -101,6 +101,7 @@ router.route('/:action_id')
         res.send(err);
 
       action.viewable = req.body.viewable;
+      action.mod_dt = new Date;
 
       // save the action
       action.save(function(err) {

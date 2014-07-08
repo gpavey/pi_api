@@ -11,7 +11,9 @@ var mongoose   = require('mongoose');
 var index     = require('./app/routes/index_rt');
 var challenges = require('./app/routes/challenges_rt');
 var users      = require('./app/routes/users_rt');
-var actions     = require('./app/routes/actions_rt')
+var actions     = require('./app/routes/actions_rt');
+var tracks     = require('./app/routes/tracks_rt');
+var goals     = require('./app/routes/goals_rt')
 
 // connect to Mongo database
 mongoose.connect('localhost/proveit'); // connect to our database
@@ -24,6 +26,8 @@ app.use('/', index);
 app.use('/challenges', challenges);
 app.use('/users', users);
 app.use('/actions', actions);
+app.use('/tracks', tracks);
+app.use('/goals', goals);
 
 var port = process.env.PORT || 8080;    // set our port
 

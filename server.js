@@ -8,9 +8,10 @@ var path       = require('path');
 
 var bodyParser = require('body-parser');
 var mongoose   = require('mongoose');
-var index     = require('./app/controller/indexController');
-var challenges = require('./app/controller/challengesController');
-var users      = require('./app/controller/usersController');
+var index     = require('./app/routes/index_rt');
+var challenges = require('./app/routes/challenges_rt');
+var users      = require('./app/routes/users_rt');
+var actions     = require('./app/routes/actions_rt')
 
 // connect to Mongo database
 mongoose.connect('localhost/proveit'); // connect to our database
@@ -22,6 +23,7 @@ app.use(bodyParser());
 app.use('/', index);
 app.use('/challenges', challenges);
 app.use('/users', users);
+app.use('/actions', actions);
 
 var port = process.env.PORT || 8080;    // set our port
 

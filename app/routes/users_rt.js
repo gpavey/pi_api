@@ -20,7 +20,7 @@ router.route('/')
   user.joins_challenge = req.body.joins_challenge;
   user.joins_track = req.body.joins_track;
   user.invite_challenge = req.body.invite_challenge;
-  user.inivite_track = req.body.inivite_track;
+  user.invite_track = req.body.invite_track;
 
   user.save(function(err){
     if (err)
@@ -70,6 +70,7 @@ router.route('/:user_id')
       user.joins_track = req.body.joins_track;
       user.invite_challenge = req.body.invite_challenge;
       user.inivite_track = req.body.inivite_track;
+      user.mod_dt = new Date;
 
       // save the user
       user.save(function(err) {

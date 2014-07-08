@@ -1,27 +1,25 @@
 var express = require('express');
 var router = express.Router();
-//var Challenge = require('../models/challenge.js');
-//var User  = require('../models/user.js');
 var Challenge = require('../models/models.js').Challenge;
 var User = require('../models/models.js').User;
-// var mongoose = require( 'mongoose' );
-// var Challenge = mongoose.model( 'Challenge' );
-// var User = mongoose.model( 'User' );
+
 
 router.route('/')
 
   // create a challenge (accessed at POST http://localhost:8080/challenges)
   .post(function(req, res) {
 
-    var userid = req.body.userid
     var xUser = new User();
-
-    xUser._id = req.body.userid;
+    xUser._id = req.body.creator_id;
 
     var challenge = new Challenge();    // create a new instance of the challenge model
-    challenge.desc = req.body.desc;  // set the challenges desc (comes from the request)
-    challenge.viewable = req.body.viewable; 
-    challenge.userid = xUser;
+    
+    challenge.desc = req.body.desc;  // set the challenges desc (comes from the request) 
+    challenge.creator = xUser;
+    challenge.join_count = req.body.join_count;
+    challenge.endorse_count = req.body.endorse_count;
+    challenge.highfive_count  = req.body.highfive_count;
+    challenge.complete_count  = req.body.complete_count;  
 
     challenge.save(function(err) {
       if (err)
@@ -51,7 +49,7 @@ router.route('/:challenge_id')
 
     Challenge
     .findOne({_id: req.params.challenge_id})
-    .populate('userid')
+    .populate('creator')
     .exec(function(err, challenge){
       if (err){
               res.send(err);
@@ -70,7 +68,12 @@ router.route('/:challenge_id')
       if (err)
         res.send(err);
 
-      challenge.desc = req.body.desc;  // update the challenges info
+      challenge.desc = req.body.desc;  // set the challenges desc (comes from the request) 
+      challenge.join_count = req.body.join_count;
+      challenge.endorse_count = req.body.endorse_count;
+      challenge.highfive_count  = req.body.highfive_count;
+      challenge.complete_count  = req.body.complete_count; 
+      challenge.mod_dt = new Date; 
 
       // save the challenge
       challenge.save(function(err) {

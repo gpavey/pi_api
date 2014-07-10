@@ -1,4 +1,5 @@
 var express = require('express');
+var mongoose     = require('mongoose');
 var router = express.Router();
 var Goal = require('../models/models.js').Goal;
 var Track = require('../models/models.js').Track;
@@ -34,6 +35,29 @@ router.route('/')
         res.send(err);
 
       res.json(tracks);
+    });
+  });
+
+// on routes that end in track/addgoal/:trackid
+  router.route('/addgoal/:track_id')
+
+  .put(function(req, res){
+    Track.findById(req.params.track_id, function(err,track){
+      if(err){
+        res.json(err);
+      }
+      else if(track == null){
+          res.json('no such track!');
+      }
+
+       track.goal.push(mongoose.Types.ObjectId(req.body.goal_id));
+       
+      track.save(function(err){
+        if (err)
+          res.send(err);
+
+        res.json({ message: 'Goal added to track!' });
+      })
     });
   });
 

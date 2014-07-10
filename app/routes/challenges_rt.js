@@ -54,7 +54,8 @@ router.route('/:challenge_id')
       if (err){
               res.send(err);
       }else{   
-       res.json(challenge);
+      res.json(challenge);
+       //res.send({message:'fuck'});
     }
     })
   })

@@ -37,9 +37,9 @@ router.route('/')
     action.user = user;
     action.user_name = req.body.user_name;
     action.type = req.body.type;
-    //action.goal = goal;
+    action.goal = goal;
     action.goal_desc = req.body.goal_desc;
-    //action.track = track;
+    action.track = track;
     action.track_desc = req.body.track_desc;
 
     action.save(function(err) {

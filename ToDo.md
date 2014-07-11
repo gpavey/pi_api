@@ -5,3 +5,4 @@
 5. look in to naming all the functions. Annonymous functions suck ass IMO
 6. write a read me file as documentation
 7. Is there anything that I would want to log that will not be on the webserver. There will be.   Anything passed in the body
+Add authentication

@@ -1,0 +1,352 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'install', '-g', 'ionic' ]
+2 info using npm@1.4.9
+3 info using node@v0.10.28
+4 verbose cache add [ 'ionic', null ]
+5 verbose cache add name=undefined spec="ionic" args=["ionic",null]
+6 verbose parsed url { protocol: null,
+6 verbose parsed url   slashes: null,
+6 verbose parsed url   auth: null,
+6 verbose parsed url   host: null,
+6 verbose parsed url   port: null,
+6 verbose parsed url   hostname: null,
+6 verbose parsed url   hash: null,
+6 verbose parsed url   search: null,
+6 verbose parsed url   query: null,
+6 verbose parsed url   pathname: 'ionic',
+6 verbose parsed url   path: 'ionic',
+6 verbose parsed url   href: 'ionic' }
+7 silly lockFile 00d10074-ionic ionic
+8 verbose lock ionic /Users/cindy/.npm/00d10074-ionic.lock
+9 silly lockFile 00d10074-ionic ionic
+10 silly lockFile 00d10074-ionic ionic
+11 verbose addNamed [ 'ionic', '' ]
+12 verbose addNamed [ null, '*' ]
+13 silly lockFile 966fc04a-ionic ionic@
+14 verbose lock ionic@ /Users/cindy/.npm/966fc04a-ionic.lock
+15 silly addNameRange { name: 'ionic', range: '*', hasData: false }
+16 verbose url raw ionic
+17 verbose url resolving [ 'https://registry.npmjs.org/', './ionic' ]
+18 verbose url resolved https://registry.npmjs.org/ionic
+19 info trying registry request attempt 1 at 11:16:22
+20 http GET https://registry.npmjs.org/ionic
+21 http 200 https://registry.npmjs.org/ionic
+22 silly registry.get cb [ 200,
+22 silly registry.get   { date: 'Thu, 10 Jul 2014 18:16:22 GMT',
+22 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+22 silly registry.get     etag: '"9LIBP6LIAQ24CQMDOJA6NDK3J"',
+22 silly registry.get     'content-type': 'application/json',
+22 silly registry.get     'cache-control': 'max-age=30',
+22 silly registry.get     'content-length': '31245',
+22 silly registry.get     'accept-ranges': 'bytes',
+22 silly registry.get     via: '1.1 varnish',
+22 silly registry.get     age: '5890',
+22 silly registry.get     'x-served-by': 'cache-sjc3123-SJC',
+22 silly registry.get     'x-cache': 'HIT',
+22 silly registry.get     'x-cache-hits': '1',
+22 silly registry.get     'x-timer': 'S1405016182.841699,VS0,VE84',
+22 silly registry.get     vary: 'Accept',
+22 silly registry.get     'keep-alive': 'timeout=10, max=50',
+22 silly registry.get     connection: 'Keep-Alive' } ]
+23 silly addNameRange number 2 { name: 'ionic', range: '*', hasData: true }
+24 silly addNameRange versions [ 'ionic',
+24 silly addNameRange   [ '0.9.6',
+24 silly addNameRange     '0.9.8',
+24 silly addNameRange     '0.9.9',
+24 silly addNameRange     '0.9.10',
+24 silly addNameRange     '0.9.11',
+24 silly addNameRange     '0.9.12',
+24 silly addNameRange     '0.9.13',
+24 silly addNameRange     '0.9.14',
+24 silly addNameRange     '0.9.15',
+24 silly addNameRange     '0.9.16',
+24 silly addNameRange     '1.0.0-beta.1',
+24 silly addNameRange     '1.0.0-beta',
+24 silly addNameRange     '1.0.1-beta',
+24 silly addNameRange     '1.0.3-beta',
+24 silly addNameRange     '1.0.4',
+24 silly addNameRange     '1.0.5',
+24 silly addNameRange     '1.0.6',
+24 silly addNameRange     '1.0.7',
+24 silly addNameRange     '1.0.8',
+24 silly addNameRange     '1.0.9',
+24 silly addNameRange     '1.0.10',
+24 silly addNameRange     '1.0.11',
+24 silly addNameRange     '1.0.12',
+24 silly addNameRange     '1.0.13',
+24 silly addNameRange     '1.0.14',
+24 silly addNameRange     '1.0.15' ] ]
+25 verbose addNamed [ 'ionic', '1.0.15' ]
+26 verbose addNamed [ '1.0.15', '1.0.15' ]
+27 silly lockFile d4bd34b4-ionic-1-0-15 ionic@1.0.15
+28 verbose lock ionic@1.0.15 /Users/cindy/.npm/d4bd34b4-ionic-1-0-15.lock
+29 silly lockFile 73137d26-npmjs-org-ionic-ionic-1-0-15-tgz https://registry.npmjs.org/ionic/-/ionic-1.0.15.tgz
+30 verbose lock https://registry.npmjs.org/ionic/-/ionic-1.0.15.tgz /Users/cindy/.npm/73137d26-npmjs-org-ionic-ionic-1-0-15-tgz.lock
+31 verbose addRemoteTarball [ 'https://registry.npmjs.org/ionic/-/ionic-1.0.15.tgz',
+31 verbose addRemoteTarball   '7db9ecd3e909e1c66a7665a97454eb5350d097f4' ]
+32 info retry fetch attempt 1 at 11:16:23
+33 verbose fetch to= /var/folders/n6/dggfk3kd3msfvdbt7sqktsvr0000gn/T/npm-709-PxXbN-s9/1405016183009-0.49654624960385263/tmp.tgz
+34 http GET https://registry.npmjs.org/ionic/-/ionic-1.0.15.tgz
+35 http 200 https://registry.npmjs.org/ionic/-/ionic-1.0.15.tgz
+36 verbose tar unpack /var/folders/n6/dggfk3kd3msfvdbt7sqktsvr0000gn/T/npm-709-PxXbN-s9/1405016183009-0.49654624960385263/tmp.tgz
+37 silly lockFile 4ba72e80-s-cindy-npm-ionic-1-0-15-package tar:///Users/cindy/.npm/ionic/1.0.15/package
+38 verbose lock tar:///Users/cindy/.npm/ionic/1.0.15/package /Users/cindy/.npm/4ba72e80-s-cindy-npm-ionic-1-0-15-package.lock
+39 silly lockFile 69dbf6a6-3009-0-49654624960385263-tmp-tgz tar:///var/folders/n6/dggfk3kd3msfvdbt7sqktsvr0000gn/T/npm-709-PxXbN-s9/1405016183009-0.49654624960385263/tmp.tgz
+40 verbose lock tar:///var/folders/n6/dggfk3kd3msfvdbt7sqktsvr0000gn/T/npm-709-PxXbN-s9/1405016183009-0.49654624960385263/tmp.tgz /Users/cindy/.npm/69dbf6a6-3009-0-49654624960385263-tmp-tgz.lock
+41 silly gunzTarPerm modes [ '755', '644' ]
+42 silly gunzTarPerm extractEntry package.json
+43 silly gunzTarPerm extractEntry .npmignore
+44 silly gunzTarPerm extractEntry README.md
+45 silly gunzTarPerm extractEntry LICENSE
+46 silly gunzTarPerm extractEntry .gitattributes
+47 silly gunzTarPerm extractEntry bin/ionic
+48 silly gunzTarPerm extractEntry bin/testApp/package.json
+49 silly gunzTarPerm extractEntry bin/testApp/.npmignore
+50 silly gunzTarPerm extractEntry bin/testApp/README.md
+51 silly gunzTarPerm extractEntry bin/testApp/gulpfile.js
+52 silly gunzTarPerm extractEntry bin/testApp/hooks/.npmignore
+53 silly gunzTarPerm extractEntry bin/testApp/hooks/README.md
+54 silly gunzTarPerm extractEntry bin/testApp/.bowerrc
+55 silly gunzTarPerm extractEntry bin/testApp/bower.json
+56 silly gunzTarPerm extractEntry bin/testApp/ionic.project
+57 silly gunzTarPerm extractEntry bin/testApp/config.xml
+58 silly gunzTarPerm extractEntry bin/testApp/platforms/.npmignore
+59 silly gunzTarPerm extractEntry bin/testApp/plugins/.npmignore
+60 silly gunzTarPerm extractEntry bin/testApp/plugins/com.ionic.keyboard/package.json
+61 silly gunzTarPerm extractEntry bin/testApp/plugins/com.ionic.keyboard/README.md
+62 silly gunzTarPerm extractEntry bin/testApp/plugins/com.ionic.keyboard/LICENSE
+63 silly gunzTarPerm extractEntry bin/testApp/plugins/com.ionic.keyboard/.fetch.json
+64 silly gunzTarPerm extractEntry bin/testApp/plugins/com.ionic.keyboard/plugin.xml
+65 silly gunzTarPerm extractEntry bin/testApp/plugins/com.ionic.keyboard/src/android/IonicKeyboard.java
+66 silly gunzTarPerm extractEntry bin/testApp/plugins/com.ionic.keyboard/src/ios/IonicKeyboard.h
+67 silly gunzTarPerm extractEntry bin/testApp/plugins/com.ionic.keyboard/src/ios/IonicKeyboard.m
+68 silly gunzTarPerm extractEntry bin/testApp/plugins/com.ionic.keyboard/src/ios/UIWebViewExtension.h
+69 silly gunzTarPerm extractEntry bin/testApp/plugins/com.ionic.keyboard/src/ios/UIWebViewExtension.m
+70 silly gunzTarPerm extractEntry bin/testApp/plugins/com.ionic.keyboard/www/keyboard.js
+71 silly gunzTarPerm extractEntry bin/testApp/plugins/org.apache.cordova.console/package.json
+72 silly gunzTarPerm extractEntry bin/testApp/plugins/org.apache.cordova.console/README.md
+73 silly gunzTarPerm extractEntry bin/testApp/plugins/org.apache.cordova.console/LICENSE
+74 silly gunzTarPerm extractEntry bin/testApp/plugins/org.apache.cordova.console/RELEASENOTES.md
+75 silly gunzTarPerm extractEntry bin/testApp/plugins/org.apache.cordova.console/.fetch.json
+76 silly gunzTarPerm extractEntry bin/testApp/plugins/org.apache.cordova.console/CONTRIBUTING.md
+77 silly gunzTarPerm extractEntry bin/testApp/plugins/org.apache.cordova.console/doc/index.md
+78 silly gunzTarPerm extractEntry bin/testApp/plugins/org.apache.cordova.console/NOTICE
+79 silly gunzTarPerm extractEntry bin/testApp/plugins/org.apache.cordova.console/plugin.xml
+80 silly gunzTarPerm extractEntry bin/testApp/plugins/org.apache.cordova.console/src/ios/CDVLogger.h
+81 silly gunzTarPerm extractEntry bin/testApp/plugins/org.apache.cordova.console/src/ios/CDVLogger.m
+82 silly gunzTarPerm extractEntry bin/testApp/plugins/org.apache.cordova.console/src/ubuntu/console.cpp
+83 silly gunzTarPerm extractEntry bin/testApp/plugins/org.apache.cordova.console/src/ubuntu/console.h
+84 silly gunzTarPerm extractEntry bin/testApp/plugins/org.apache.cordova.console/src/wp/DebugConsole.cs
+85 silly gunzTarPerm extractEntry bin/testApp/plugins/org.apache.cordova.console/www/console-via-logger.js
+86 silly gunzTarPerm extractEntry bin/testApp/plugins/org.apache.cordova.console/www/logger.js
+87 silly gunzTarPerm extractEntry bin/testApp/plugins/org.apache.cordova.device/package.json
+88 silly gunzTarPerm extractEntry bin/testApp/plugins/org.apache.cordova.device/README.md
+89 silly gunzTarPerm extractEntry bin/testApp/plugins/org.apache.cordova.device/LICENSE
+90 silly gunzTarPerm extractEntry bin/testApp/plugins/org.apache.cordova.device/RELEASENOTES.md
+91 silly gunzTarPerm extractEntry bin/testApp/plugins/org.apache.cordova.device/.fetch.json
+92 silly gunzTarPerm extractEntry bin/testApp/plugins/org.apache.cordova.device/CONTRIBUTING.md
+93 silly gunzTarPerm extractEntry bin/testApp/plugins/org.apache.cordova.device/doc/de/index.md
+94 silly gunzTarPerm extractEntry bin/testApp/plugins/org.apache.cordova.device/doc/es/index.md
+95 silly gunzTarPerm extractEntry bin/testApp/plugins/org.apache.cordova.device/doc/fr/index.md
+96 silly gunzTarPerm extractEntry bin/testApp/plugins/org.apache.cordova.device/doc/index.md
+97 silly gunzTarPerm extractEntry bin/testApp/plugins/org.apache.cordova.device/doc/it/index.md
+98 silly gunzTarPerm extractEntry bin/testApp/plugins/org.apache.cordova.device/doc/ja/index.md
+99 silly gunzTarPerm extractEntry bin/testApp/plugins/org.apache.cordova.device/doc/ko/index.md
+100 silly gunzTarPerm extractEntry bin/testApp/plugins/org.apache.cordova.device/doc/pl/index.md
+101 silly gunzTarPerm extractEntry bin/testApp/plugins/org.apache.cordova.device/doc/zh/index.md
+102 silly gunzTarPerm extractEntry bin/testApp/plugins/org.apache.cordova.device/NOTICE
+103 silly gunzTarPerm extractEntry bin/testApp/plugins/org.apache.cordova.device/plugin.xml
+104 silly gunzTarPerm extractEntry bin/testApp/plugins/org.apache.cordova.device/src/android/Device.java
+105 silly gunzTarPerm extractEntry bin/testApp/plugins/org.apache.cordova.device/src/blackberry10/index.js
+106 silly gunzTarPerm extractEntry bin/testApp/plugins/org.apache.cordova.device/src/firefoxos/DeviceProxy.js
+107 silly gunzTarPerm extractEntry bin/testApp/plugins/org.apache.cordova.device/src/ios/CDVDevice.h
+108 silly gunzTarPerm extractEntry bin/testApp/plugins/org.apache.cordova.device/src/ios/CDVDevice.m
+109 silly gunzTarPerm extractEntry bin/testApp/plugins/org.apache.cordova.device/src/tizen/DeviceProxy.js
+110 silly gunzTarPerm extractEntry bin/testApp/plugins/org.apache.cordova.device/src/ubuntu/device.js
+111 silly gunzTarPerm extractEntry bin/testApp/plugins/org.apache.cordova.device/src/ubuntu/device.cpp
+112 silly gunzTarPerm extractEntry bin/testApp/plugins/org.apache.cordova.device/src/ubuntu/device.h
+113 silly gunzTarPerm extractEntry bin/testApp/plugins/org.apache.cordova.device/src/windows8/DeviceProxy.js
+114 silly gunzTarPerm extractEntry bin/testApp/plugins/org.apache.cordova.device/src/wp/Device.cs
+115 silly gunzTarPerm extractEntry bin/testApp/plugins/org.apache.cordova.device/www/device.js
+116 silly gunzTarPerm extractEntry bin/testApp/scss/ionic.app.scss
+117 silly gunzTarPerm extractEntry bin/testApp/www/.npmignore
+118 silly gunzTarPerm extractEntry bin/testApp/www/README.md
+119 silly gunzTarPerm extractEntry bin/testApp/www/css/style.css
+120 silly gunzTarPerm extractEntry bin/testApp/www/img/ionic.png
+121 silly gunzTarPerm extractEntry bin/testApp/www/index.html
+122 silly gunzTarPerm extractEntry bin/testApp/www/js/app.js
+123 silly gunzTarPerm extractEntry bin/testApp/www/js/controllers.js
+124 silly gunzTarPerm extractEntry bin/testApp/www/js/services.js
+125 silly gunzTarPerm extractEntry bin/testApp/www/lib/ionic/css/ionic.css
+126 silly gunzTarPerm extractEntry bin/testApp/www/lib/ionic/css/ionic.min.css
+127 silly gunzTarPerm extractEntry bin/testApp/www/lib/ionic/fonts/ionicons.eot
+128 silly gunzTarPerm extractEntry bin/testApp/www/lib/ionic/fonts/ionicons.svg
+129 silly gunzTarPerm extractEntry bin/testApp/www/lib/ionic/fonts/ionicons.ttf
+130 silly gunzTarPerm extractEntry bin/testApp/www/lib/ionic/fonts/ionicons.woff
+131 silly gunzTarPerm extractEntry bin/testApp/www/lib/ionic/js/ionic-angular.js
+132 silly gunzTarPerm extractEntry bin/testApp/www/lib/ionic/js/ionic-angular.min.js
+133 silly gunzTarPerm extractEntry bin/testApp/www/lib/ionic/js/ionic.bundle.js
+134 silly gunzTarPerm extractEntry bin/testApp/www/lib/ionic/js/ionic.bundle.min.js
+135 silly gunzTarPerm extractEntry bin/testApp/www/lib/ionic/js/ionic.js
+136 silly gunzTarPerm extractEntry bin/testApp/www/lib/ionic/js/ionic.min.js
+137 silly gunzTarPerm extractEntry bin/testApp/www/lib/ionic/js/angular/angular-animate.js
+138 silly gunzTarPerm extractEntry bin/testApp/www/lib/ionic/js/angular/angular-animate.min.js
+139 silly gunzTarPerm extractEntry bin/testApp/www/lib/ionic/js/angular/angular-resource.js
+140 silly gunzTarPerm extractEntry bin/testApp/www/lib/ionic/js/angular/angular-resource.min.js
+141 silly gunzTarPerm extractEntry bin/testApp/www/lib/ionic/js/angular/angular-sanitize.js
+142 silly gunzTarPerm extractEntry bin/testApp/www/lib/ionic/js/angular/angular-sanitize.min.js
+143 silly gunzTarPerm extractEntry bin/testApp/www/lib/ionic/js/angular/angular.js
+144 silly gunzTarPerm extractEntry bin/testApp/www/lib/ionic/js/angular/angular.min.js
+145 silly gunzTarPerm extractEntry bin/testApp/www/lib/ionic/js/angular-ui/angular-ui-router.js
+146 silly gunzTarPerm extractEntry bin/testApp/www/lib/ionic/js/angular-ui/angular-ui-router.min.js
+147 silly gunzTarPerm extractEntry bin/testApp/www/lib/ionic/scss/_platform.scss
+148 silly gunzTarPerm extractEntry bin/testApp/www/lib/ionic/scss/_action-sheet.scss
+149 silly gunzTarPerm extractEntry bin/testApp/www/lib/ionic/scss/_backdrop.scss
+150 silly gunzTarPerm extractEntry bin/testApp/www/lib/ionic/scss/_badge.scss
+151 silly gunzTarPerm extractEntry bin/testApp/www/lib/ionic/scss/_bar.scss
+152 silly gunzTarPerm extractEntry bin/testApp/www/lib/ionic/scss/_button-bar.scss
+153 silly gunzTarPerm extractEntry bin/testApp/www/lib/ionic/scss/_button.scss
+154 silly gunzTarPerm extractEntry bin/testApp/www/lib/ionic/scss/_checkbox.scss
+155 silly gunzTarPerm extractEntry bin/testApp/www/lib/ionic/scss/_form.scss
+156 silly gunzTarPerm extractEntry bin/testApp/www/lib/ionic/scss/_grid.scss
+157 silly gunzTarPerm extractEntry bin/testApp/www/lib/ionic/scss/_items.scss
+158 silly gunzTarPerm extractEntry bin/testApp/www/lib/ionic/scss/_list.scss
+159 silly gunzTarPerm extractEntry bin/testApp/www/lib/ionic/scss/_loading.scss
+160 silly gunzTarPerm extractEntry bin/testApp/www/lib/ionic/scss/_menu.scss
+161 silly gunzTarPerm extractEntry bin/testApp/www/lib/ionic/scss/_mixins.scss
+162 silly gunzTarPerm extractEntry bin/testApp/www/lib/ionic/scss/_modal.scss
+163 silly gunzTarPerm extractEntry bin/testApp/www/lib/ionic/scss/_animations.scss
+164 silly gunzTarPerm extractEntry bin/testApp/www/lib/ionic/scss/_popup.scss
+165 silly gunzTarPerm extractEntry bin/testApp/www/lib/ionic/scss/_progress.scss
+166 silly gunzTarPerm extractEntry bin/testApp/www/lib/ionic/scss/_radio.scss
+167 silly gunzTarPerm extractEntry bin/testApp/www/lib/ionic/scss/_range.scss
+168 silly gunzTarPerm extractEntry bin/testApp/www/lib/ionic/scss/_reset.scss
+169 silly gunzTarPerm extractEntry bin/testApp/www/lib/ionic/scss/_scaffolding.scss
+170 silly gunzTarPerm extractEntry bin/testApp/www/lib/ionic/scss/_select.scss
+171 silly gunzTarPerm extractEntry bin/testApp/www/lib/ionic/scss/_slide-box.scss
+172 silly gunzTarPerm extractEntry bin/testApp/www/lib/ionic/scss/_split-pane.scss
+173 silly gunzTarPerm extractEntry bin/testApp/www/lib/ionic/scss/_tabs.scss
+174 silly gunzTarPerm extractEntry bin/testApp/www/lib/ionic/scss/_toggle.scss
+175 silly gunzTarPerm extractEntry bin/testApp/www/lib/ionic/scss/_type.scss
+176 silly gunzTarPerm extractEntry bin/testApp/www/lib/ionic/scss/_util.scss
+177 silly gunzTarPerm extractEntry bin/testApp/www/lib/ionic/scss/_variables.scss
+178 silly gunzTarPerm extractEntry bin/testApp/www/lib/ionic/scss/ionic.scss
+179 silly gunzTarPerm extractEntry bin/testApp/www/lib/ionic/scss/ionicons/_ionicons-animation.scss
+180 silly gunzTarPerm extractEntry bin/testApp/www/lib/ionic/scss/ionicons/_ionicons-font.scss
+181 silly gunzTarPerm extractEntry bin/testApp/www/lib/ionic/scss/ionicons/_ionicons-icons.scss
+182 silly gunzTarPerm extractEntry bin/testApp/www/lib/ionic/scss/ionicons/_ionicons-variables.scss
+183 silly gunzTarPerm extractEntry bin/testApp/www/lib/ionic/scss/ionicons/ionicons.scss
+184 silly gunzTarPerm extractEntry bin/testApp/www/lib/ionic/version.json
+185 silly gunzTarPerm extractEntry bin/testApp/www/templates/friend-detail.html
+186 silly gunzTarPerm extractEntry bin/testApp/www/templates/tab-account.html
+187 silly gunzTarPerm extractEntry bin/testApp/www/templates/tab-dash.html
+188 silly gunzTarPerm extractEntry bin/testApp/www/templates/tab-friends.html
+189 silly gunzTarPerm extractEntry bin/testApp/www/templates/tabs.html
+190 silly gunzTarPerm extractEntry lib/ionic.js
+191 silly gunzTarPerm extractEntry lib/ionic/build.js
+192 silly gunzTarPerm extractEntry lib/ionic/login.js
+193 silly gunzTarPerm extractEntry lib/ionic/package.js
+194 silly gunzTarPerm extractEntry lib/ionic/platform.js
+195 silly gunzTarPerm extractEntry lib/ionic/project.js
+196 silly gunzTarPerm extractEntry lib/ionic/emulate.js
+197 silly gunzTarPerm extractEntry lib/ionic/serve.js
+198 silly gunzTarPerm extractEntry lib/ionic/start.js
+199 silly gunzTarPerm extractEntry lib/ionic/stats.js
+200 silly gunzTarPerm extractEntry lib/ionic/store.js
+201 silly gunzTarPerm extractEntry lib/ionic/task.js
+202 silly gunzTarPerm extractEntry lib/ionic/config.js
+203 silly gunzTarPerm extractEntry lib/ionic/upload.js
+204 silly gunzTarPerm extractEntry lib/ionic/run.js
+205 silly lockFile 4ba72e80-s-cindy-npm-ionic-1-0-15-package tar:///Users/cindy/.npm/ionic/1.0.15/package
+206 silly lockFile 4ba72e80-s-cindy-npm-ionic-1-0-15-package tar:///Users/cindy/.npm/ionic/1.0.15/package
+207 silly lockFile 69dbf6a6-3009-0-49654624960385263-tmp-tgz tar:///var/folders/n6/dggfk3kd3msfvdbt7sqktsvr0000gn/T/npm-709-PxXbN-s9/1405016183009-0.49654624960385263/tmp.tgz
+208 silly lockFile 69dbf6a6-3009-0-49654624960385263-tmp-tgz tar:///var/folders/n6/dggfk3kd3msfvdbt7sqktsvr0000gn/T/npm-709-PxXbN-s9/1405016183009-0.49654624960385263/tmp.tgz
+209 silly lockFile 73137d26-npmjs-org-ionic-ionic-1-0-15-tgz https://registry.npmjs.org/ionic/-/ionic-1.0.15.tgz
+210 silly lockFile 73137d26-npmjs-org-ionic-ionic-1-0-15-tgz https://registry.npmjs.org/ionic/-/ionic-1.0.15.tgz
+211 silly lockFile d4bd34b4-ionic-1-0-15 ionic@1.0.15
+212 silly lockFile d4bd34b4-ionic-1-0-15 ionic@1.0.15
+213 silly lockFile 966fc04a-ionic ionic@
+214 silly lockFile 966fc04a-ionic ionic@
+215 silly resolved [ { name: 'ionic',
+215 silly resolved     version: '1.0.15',
+215 silly resolved     preferGlobal: true,
+215 silly resolved     description: 'A tool for creating and developing Ionic Framework mobile apps.',
+215 silly resolved     homepage: 'http://ionicframework.com/',
+215 silly resolved     bin: { ionic: 'bin/ionic' },
+215 silly resolved     keywords:
+215 silly resolved      [ 'ionic',
+215 silly resolved        'ionic framework',
+215 silly resolved        'mobile',
+215 silly resolved        'html5',
+215 silly resolved        'cordova',
+215 silly resolved        'phonegap' ],
+215 silly resolved     repository:
+215 silly resolved      { type: 'git',
+215 silly resolved        url: 'https://github.com/driftyco/ionic-cli.git' },
+215 silly resolved     contributors: [ [Object], [Object], [Object] ],
+215 silly resolved     license: 'MIT',
+215 silly resolved     dependencies:
+215 silly resolved      { archiver: '0.5.1',
+215 silly resolved        colors: '^0.6.2',
+215 silly resolved        connect: '^2.14.5',
+215 silly resolved        'connect-livereload': '^0.4.0',
+215 silly resolved        'event-stream': '3.0.x',
+215 silly resolved        'form-data': '~0.1.0',
+215 silly resolved        ncp: '0.4.2',
+215 silly resolved        npm: '^1.4.6',
+215 silly resolved        open: '0.0.5',
+215 silly resolved        optimist: '0.6.0',
+215 silly resolved        prompt: '0.2.12',
+215 silly resolved        progress: '1.1.7',
+215 silly resolved        q: '^1.0.1',
+215 silly resolved        request: '2.27.0',
+215 silly resolved        shelljs: '0.2.6',
+215 silly resolved        'tiny-lr-fork': '0.0.5',
+215 silly resolved        'vinyl-fs': '^0.1.4',
+215 silly resolved        unzip: '0.1.9',
+215 silly resolved        xml2js: '^0.4.4' },
+215 silly resolved     readme: 'Ionic-Cli\n=========\n\nThe Ionic Framework command line utility makes it easy to start, build, run, and emulate [Ionic](http://ionicframework.com/) apps. In the future, it will also have support for our mobile development services and tools that make Ionic even more powerful.\n\n## Installing\n\n```bash\n$ sudo npm install -g ionic\n```\n\n## Starting an Ionic App\n\n```bash\n$ ionic start myApp [template]\n```\nThere are three choices of templates.\n\n* Side-Menu (sidemenu)\n* Tabs (tabs)\n* Blank (blank)\n \n## Testing in a Browser\n\n```bash\n$ ionic serve\n```\n\n\n## Adding a platform target\n\n```bash\n$ ionic platform ios android\n```\n\n## Building your app\n\n```bash\n$ ionic build ios\n```\n\n## Emulating your app\n\n```bash\n$ ionic emulate ios\n```\n\n## Running your app\n\n```bash\n$ ionic run ios\n```\n\nIonic uses Cordova underneath, so you can also substitute Cordova commands to prepare/build/emulate/run, or to add additional plugins.\n\nNote: we occasionally send anonymous usage statistics to the Ionic team to make the tool better.\n',
+215 silly resolved     readmeFilename: 'README.md',
+215 silly resolved     bugs: { url: 'https://github.com/driftyco/ionic-cli/issues' },
+215 silly resolved     _id: 'ionic@1.0.15',
+215 silly resolved     _shasum: '7db9ecd3e909e1c66a7665a97454eb5350d097f4',
+215 silly resolved     _from: 'ionic@',
+215 silly resolved     _resolved: 'https://registry.npmjs.org/ionic/-/ionic-1.0.15.tgz' } ]
+216 info install ionic@1.0.15 into /usr/local/lib
+217 info installOne ionic@1.0.15
+218 info /usr/local/lib/node_modules/ionic unbuild
+219 verbose tar unpack /Users/cindy/.npm/ionic/1.0.15/package.tgz
+220 silly lockFile 49903aa3-usr-local-lib-node-modules-ionic tar:///usr/local/lib/node_modules/ionic
+221 verbose lock tar:///usr/local/lib/node_modules/ionic /Users/cindy/.npm/49903aa3-usr-local-lib-node-modules-ionic.lock
+222 silly lockFile 1ade1ba9-ndy-npm-ionic-1-0-15-package-tgz tar:///Users/cindy/.npm/ionic/1.0.15/package.tgz
+223 verbose lock tar:///Users/cindy/.npm/ionic/1.0.15/package.tgz /Users/cindy/.npm/1ade1ba9-ndy-npm-ionic-1-0-15-package-tgz.lock
+224 silly gunzTarPerm modes [ '755', '644' ]
+225 error Error: EACCES, mkdir '/usr/local/lib/node_modules/ionic'
+225 error  { [Error: EACCES, mkdir '/usr/local/lib/node_modules/ionic']
+225 error   errno: 3,
+225 error   code: 'EACCES',
+225 error   path: '/usr/local/lib/node_modules/ionic',
+225 error   fstream_type: 'Directory',
+225 error   fstream_path: '/usr/local/lib/node_modules/ionic',
+225 error   fstream_class: 'DirWriter',
+225 error   fstream_stack:
+225 error    [ '/usr/local/lib/node_modules/npm/node_modules/fstream/lib/dir-writer.js:36:23',
+225 error      '/usr/local/lib/node_modules/npm/node_modules/mkdirp/index.js:37:53',
+225 error      'Object.oncomplete (fs.js:107:15)' ] }
+226 error Please try running this command again as root/Administrator.
+227 error System Darwin 13.3.0
+228 error command "node" "/usr/local/bin/npm" "install" "-g" "ionic"
+229 error cwd /Users/cindy/Projects/pi_api
+230 error node -v v0.10.28
+231 error npm -v 1.4.9
+232 error path /usr/local/lib/node_modules/ionic
+233 error fstream_path /usr/local/lib/node_modules/ionic
+234 error fstream_type Directory
+235 error fstream_class DirWriter
+236 error code EACCES
+237 error errno 3
+238 error stack Error: EACCES, mkdir '/usr/local/lib/node_modules/ionic'
+239 error fstream_stack /usr/local/lib/node_modules/npm/node_modules/fstream/lib/dir-writer.js:36:23
+239 error fstream_stack /usr/local/lib/node_modules/npm/node_modules/mkdirp/index.js:37:53
+239 error fstream_stack Object.oncomplete (fs.js:107:15)
+240 verbose exit [ 3, true ]

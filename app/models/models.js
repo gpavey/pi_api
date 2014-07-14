@@ -18,7 +18,7 @@ var UserSchema   = new Schema({
 
 var ChallengeSchema   = new Schema({
   desc            :   String,
-  creator      :   {type: Schema.Types.ObjectId, ref: 'User'},
+  creator         :   {type: Schema.Types.ObjectId, ref: 'User'},
   join_count      :   Number,
   endorse_count   :   Number,
   highfive_count  :   Number,
@@ -35,9 +35,9 @@ var ActionSchema    = new Schema({
   viewable       :    String,
   user           :    {type: Schema.Types.ObjectId, ref: 'User'}, 
   user_name      :    String,
-  Type           :    String,
+  Type           :    {type: String, enum: ['JOIN', 'ENDORSE','HIGHFIVE','COMPLETE']},
   goal           :    {type: Schema.Types.ObjectId, ref: 'Goal'},
-  goald_desc     :    String,
+  goal_desc      :    String,
   track          :    {type: Schema.Types.ObjectId, ref: 'Track'},
   track_desc     :    String,  
   create_dt      :    {type: Date, default: Date.now} ,
@@ -46,14 +46,14 @@ var ActionSchema    = new Schema({
 
 var TrackSchema   = new Schema({
   desc            :   String,
-  goal         :   [{type: Schema.Types.ObjectId, ref: 'Goal'}],
+  goal            :   [{type: Schema.Types.ObjectId, ref: 'Goal'}],
   create_dt       :   {type: Date, default: Date.now},
   mod_dt          :   {type: Date, default: Date.now}  
 });
 
 var GoalSchema   = new Schema({
   desc            :   String,
-  track        :   {type: Schema.Types.ObjectId, ref: 'Track'},
+  track           :   {type: Schema.Types.ObjectId, ref: 'Track'},
   create_dt       :   {type: Date, default: Date.now} ,
   mod_dt          :   {type: Date, default: Date.now} 
 });

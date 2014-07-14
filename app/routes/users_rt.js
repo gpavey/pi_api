@@ -1,15 +1,15 @@
-var express = require('express');
-var router = express.Router();
-// var Challenge = require('../models/models.js').Challenge;
-// var User = require('../models/models.js').User;
-var mongoose = require( 'mongoose' );
-var Challenge = mongoose.model( 'Challenge' );
-var User = mongoose.model( 'User' );
+var Challenge = require('../models/models.js').Challenge;
+var User = require('../models/models.js').User;
 
-router.route('/')
+function setup(app) {
+  app.get('/users', getUsers);
+  app.post('/users',postUser);
+  app.get('/users/:user_id', getByUserId);
+  app.put('/users/:user_id', putByUserId);
+  app.delete('/users/:user_id', deleteByUserId);
+}
 
-// Create a user (access at POST http://localhost:8080/users)
-.post(function(req,res){
+function postUser(req,res){
 
   var user = new User();
   user.first_name = req.body.first_name;
@@ -27,37 +27,27 @@ router.route('/')
       res.send(err);
     res.json({ message: 'User created!' });
   });
-})
+}
 
-// get all the user (accessed at GET http://localhost:8080/api/users)
-  .get(function(req, res) {
+  function getUsers(req, res) {
     User.find(function(err, users) {
       if (err)
         res.send(err);
 
       res.json(users);
     });
-  });
+  }
 
-  //on routes that end in /users/:user_id
-//----------------------------------------------------
-router.route('/:user_id')
-
-  // get the user with that id (accessed at GET http://localhost:8080/api/users/:user_id)
-  .get(function(req, res) {
+  function getByUserId(req, res) {
     User.findById(req.params.user_id, function(err, user) {
       if (err)
         res.send(err);
       res.json(user);
     });
-  })
+  }
 
-  // update the user with this id (accessed at PUT http://localhost:8080/api/users/:user_id)
-  .put(function(req, res) {
-
-    // use our user model to find the user we want
+  function putByUserId(req, res) {
     User.findById(req.params.user_id, function(err, user) {
-
       if (err)
         res.send(err);
 
@@ -71,20 +61,17 @@ router.route('/:user_id')
       user.invite_challenge = req.body.invite_challenge;
       user.inivite_track = req.body.inivite_track;
       user.mod_dt = new Date;
+    });
 
-      // save the user
-      user.save(function(err) {
+    user.save(function(err) {
         if (err)
           res.send(err);
 
         res.json({ message: 'User updated!' });
       });
+  }
 
-    });
-  })
-
-  // delete the user with this id (accessed at DELETE http://localhost:8080/api/users/:user_id)
-  .delete(function(req, res) {
+  function deleteByUserId(req, res) {
     User.remove({
       _id: req.params.user_id
     }, function(err, user) {
@@ -93,7 +80,7 @@ router.route('/:user_id')
 
       res.json({ message: 'Successfully deleted' });
     });
-  });
+  }
 
 
-module.exports = router;
+module.exports = setup;

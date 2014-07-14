@@ -2,40 +2,43 @@ var mongoose     = require('mongoose');
 var Schema       = mongoose.Schema;
 
 var UserSchema   = new Schema({
-  first_name      :   String,
-  last_name       :   String,
+  first_name      :   {type: String, require: true, trim: true},
+  last_name       :   {type: String, require: true, trim: true},
   location        :   String,
-  email           :   String,
-  bio             :   String,
-  joins_challenge :   String,
-  joins_track     :   String,
-  invite_challenge:   String,
-  invite_track    :   String,
+  email           :   { type: String, 
+                        unique: true,
+                        match: [/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/, 'Please fill a valid email address']
+                      },  
+  bio             :   {type: String, enum: ['Y','N'], default: 'Y'},
+  joins_challenge :   {type: String, enum: ['Y','N'], default: 'Y'},
+  joins_track     :   {type: String, enum: ['Y','N'], default: 'Y'},
+  invite_challenge:   {type: String, enum: ['Y','N'], default: 'Y'},
+  invite_track    :   {type: String, enum: ['Y','N'], default: 'Y'},
   create_dt       :   {type: Date, default: Date.now} ,
   mod_dt          :   {type: Date, default: Date.now}  
 });
 
 
 var ChallengeSchema   = new Schema({
-  desc            :   String,
+  desc            :   {type: String, require: true, trim: true},
   creator         :   {type: Schema.Types.ObjectId, ref: 'User'},
-  join_count      :   Number,
-  endorse_count   :   Number,
-  highfive_count  :   Number,
-  complete_count  :   Number,  
+  join_count      :   {type: Number, default: 0},
+  endorse_count   :   {type: Number, default: 0},
+  highfive_count  :   {type: Number, default: 0},
+  complete_count  :   {type: Number, default:0},  
   create_dt       :   {type: Date, default: Date.now},
   mod_dt          :   {type: Date, default: Date.now} 
 });
 
 var ActionSchema    = new Schema({
   challenge      :    {type: Schema.Types.ObjectId, ref: 'Challenge'},
-  challenge_desc :    String,
+  challenge_desc :    {type: String, require: true, trim: true},
   creator        :    {type: Schema.Types.ObjectId, ref: 'User'},
-  creator_name   :    String,
-  viewable       :    String,
+  creator_name   :    {type: String, require: true},
+  viewable       :    {type: String, enum: ['Y', 'N', 'INVITEE'], require: true},
   user           :    {type: Schema.Types.ObjectId, ref: 'User'}, 
   user_name      :    String,
-  Type           :    {type: String, enum: ['JOIN', 'ENDORSE','HIGHFIVE','COMPLETE']},
+  Type           :    {type: String, enum: ['JOIN', 'ENDORSE','HIGHFIVE','COMPLETE'], require: true},
   goal           :    {type: Schema.Types.ObjectId, ref: 'Goal'},
   goal_desc      :    String,
   track          :    {type: Schema.Types.ObjectId, ref: 'Track'},
@@ -45,14 +48,14 @@ var ActionSchema    = new Schema({
 });
 
 var TrackSchema   = new Schema({
-  desc            :   String,
+  desc            :   {type: String, require: true, trim: true},
   goal            :   [{type: Schema.Types.ObjectId, ref: 'Goal'}],
   create_dt       :   {type: Date, default: Date.now},
   mod_dt          :   {type: Date, default: Date.now}  
 });
 
 var GoalSchema   = new Schema({
-  desc            :   String,
+  desc            :   {type: String, require: true, trim: true},
   track           :   {type: Schema.Types.ObjectId, ref: 'Track'},
   create_dt       :   {type: Date, default: Date.now} ,
   mod_dt          :   {type: Date, default: Date.now} 

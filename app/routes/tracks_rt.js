@@ -1,14 +1,17 @@
-var express = require('express');
-var mongoose     = require('mongoose');
-var router = express.Router();
 var Goal = require('../models/models.js').Goal;
 var Track = require('../models/models.js').Track;
 
+function setup(app) {
+  app.get('/tracks', getTracks);
+  app.get('/tracks/:track_id', getByTrackId);  
+  app.get('/addgoal/:track_id', addGoalByTrackId);  
+  app.post('/tracks',postTrack);
+  app.put('/tracks/:track_id', putByTrackId);
+  app.delete('/tracks/:track_id', deleteByTrackId);
+}
 
-router.route('/')
 
-  // create a action (accessed at POST http://localhost:8080/actions)
-  .post(function(req, res) {
+  function postTrack(req, res) {
 
 
     var goal = new Goal();
@@ -26,22 +29,18 @@ router.route('/')
       res.json({ message: 'Track created!' });
     });
 
-  })
+  }
 
-  // get all the actions (accessed at GET http://localhost:8080/api/actions)
-  .get(function(req, res) {
+  function getTracks(req, res) {
     Track.find(function(err, tracks) {
       if (err)
         res.send(err);
 
       res.json(tracks);
     });
-  });
+  }
 
-// on routes that end in track/addgoal/:trackid
-  router.route('/addgoal/:track_id')
-
-  .put(function(req, res){
+  function addGoalByTrackId(req, res){
     Track.findById(req.params.track_id, function(err,track){
       if(err){
         res.json(err);
@@ -59,14 +58,9 @@ router.route('/')
         res.json({ message: 'Goal added to track!' });
       })
     });
-  });
+  }
 
-// //on routes that end in /actions/:action_id
-// //----------------------------------------------------
-router.route('/:track_id')
-
-  // get the action with that id (accessed at GET http://localhost:8080/api/actions/:action_id)
-  .get(function(req, res) {
+  function getByTrackId(req, res) {
 
     Track
     .findOne({_id: req.params.track_id})
@@ -78,12 +72,9 @@ router.route('/:track_id')
        res.json(track);
     }
     });
-  })
+  }
 
-  // update the action with this id (accessed at PUT http://localhost:8080/api/s/:action_id)
-  .put(function(req, res) {
-
-    // use our action model to find the action we want
+  function putByTrackId(req, res) {
     Track.findById(req.params.track_id, function(err, track) {
 
       if (err)
@@ -101,10 +92,9 @@ router.route('/:track_id')
       });
 
     });
-  })
+  }
 
-  // delete the action with this id (accessed at DELETE http://localhost:8080/api/actions/:action_id)
-  .delete(function(req, res) {
+  function deleteByTrackId(req, res) {
     Track.remove({
       _id: req.params.track_id
     }, function(err, track) {
@@ -113,6 +103,6 @@ router.route('/:track_id')
 
       res.json({ message: 'Track successfully deleted' });
     });
-  });
+  }
 
-module.exports = router;
+  module.exports = setup;

@@ -1,27 +1,19 @@
-var express = require('express');
-var router = express.Router();
+
 var Goal = require('../models/models.js').Goal;
 var Track = require('../models/models.js').Track;
 
-// ------------------------------------------------------
-//  routes that end in /goals
-// ------------------------------------------------------
-router.route('/')
-  .post(postGoals)
-  .get(getGoals);
-
-// ------------------------------------------------------
-//  routes that end in /goals/:goal_id
-// ------------------------------------------------------
-router.route('/:goal_id')
-.get(getGoalId)
-.put(putGoalId)
-.delete(deleteGoalId);
+function setup(app) {
+  app.get('/goals', getGoals);
+  app.post('/goals',postGoal);
+  app.get('/goals/:goal_id', getByGoalId);
+  app.put('/goals/:goal_id', putByGoalId);
+  app.delete('/goals/:goal_id', deleteByGoalId);
+}
 
 // -----------------------------------------------------
 //  Callback functions
 //------------------------------------------------------
-function postGoals (req,res){
+function postGoal (req,res){
     var goal = new Goal();
     goal.desc = req.body.desc;
 
@@ -44,7 +36,7 @@ function getGoals(req,res){
     })
 }
 
-function putGoalId (req, res){
+function putByGoalId (req, res){
     Goal.findById(req.params.goal_id, function(err, goal) {
 
       if (err)res.send(err);
@@ -59,14 +51,14 @@ function putGoalId (req, res){
     })
 }
 
-function getGoalId (req,res){
+function getByGoalId (req,res){
     Goal.findById(req.params.goal_id, function(err, goal) {
       if (err)res.send(err);
       res.json(goal);
     })
 }
 
-function deleteGoalId(req, res) {
+function deleteByGoalId(req, res) {
     Goal.remove({
       _id: req.params.goal_id
     }, function(err, goal) {
@@ -76,4 +68,4 @@ function deleteGoalId(req, res) {
     })
 }
 
-module.exports = router;
+module.exports = setup;

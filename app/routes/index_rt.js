@@ -1,8 +1,10 @@
-var express = require('express');
-var router = express.Router();
 
-router.get('/', function(req,res){
-  res.json({message:'Yay! We split out our routes!!! High Five'});
-});
+function setup(app){
+  app.get('/', getRoot)
+}
 
-module.exports = router;
+function getRoot(req,res){
+  res.json({message:'Home'});
+}
+
+module.exports = setup;

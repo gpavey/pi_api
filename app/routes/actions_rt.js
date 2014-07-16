@@ -2,8 +2,6 @@
 var Action = require('../models/models.js').Action;
 var User = require('../models/models.js').User;
 var Challenge = require('../models/models.js').Challenge;
-var Goal = require('../models/models.js').Goal;
-var Track = require('../models/models.js').Track;
 
 function setup(app) {
   app.get('/actions', getActions);
@@ -25,15 +23,8 @@ function postAction(req, res) {
   var challenge = new Challenge();
   challenge._id = req.body.challenge_id;
 
-  var goal = new Goal();
-  goal._id = req.body.goal_id;
-
-  var track = new Track();
-  track._id = req.body.track_id
-
   var action = new Action();
    
-  //action.challenge  = challenge;
   action.challenge_desc = req.body.challenge_desc;
   action.creator = creator;
   action.creator_name = req.body.creator_name;
@@ -41,10 +32,6 @@ function postAction(req, res) {
   action.user = user;
   action.user_name = req.body.user_name;
   action.type = req.body.type;
-  action.goal = goal;
-  action.goal_desc = req.body.goal_desc;
-  action.track = track;
-  action.track_desc = req.body.track_desc;
 
   action.save(function(err) {
     if (err)

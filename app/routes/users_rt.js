@@ -18,9 +18,7 @@ function postUser(req,res){
   user.email = req.body.email;
   user.bio = req.body.bio;
   user.joins_challenge = req.body.joins_challenge;
-  user.joins_track = req.body.joins_track;
   user.invite_challenge = req.body.invite_challenge;
-  user.invite_track = req.body.invite_track;
 
   user.save(function(err){
     if (err)
@@ -47,6 +45,7 @@ function postUser(req,res){
   }
 
   function putByUserId(req, res) {
+
     User.findById(req.params.user_id, function(err, user) {
       if (err)
         res.send(err);
@@ -57,18 +56,16 @@ function postUser(req,res){
       user.email = req.body.email;
       user.bio = req.body.bio;
       user.joins_challenge = req.body.joins_challenge;
-      user.joins_track = req.body.joins_track;
       user.invite_challenge = req.body.invite_challenge;
-      user.inivite_track = req.body.inivite_track;
       user.mod_dt = new Date;
-    });
 
-    user.save(function(err) {
+      user.save(function(err) {
         if (err)
           res.send(err);
 
         res.json({ message: 'User updated!' });
       });
+    });
   }
 
   function deleteByUserId(req, res) {

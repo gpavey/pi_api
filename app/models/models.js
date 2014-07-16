@@ -1,6 +1,8 @@
 var mongoose     = require('mongoose');
 var Schema       = mongoose.Schema;
 
+
+
 var UserSchema   = new Schema({
   first_name      :   {type: String, require: true, trim: true},
   last_name       :   {type: String, require: true, trim: true},
@@ -21,7 +23,7 @@ var UserSchema   = new Schema({
 
 var ChallengeSchema   = new Schema({
   desc            :   {type: String, require: true, trim: true},
-  creator         :   {type: Schema.Types.ObjectId, ref: 'User'},
+  // creator         :   {type: Schema.Types.ObjectId, ref: 'User'},
   join_count      :   {type: Number, default: 0},
   endorse_count   :   {type: Number, default: 0},
   highfive_count  :   {type: Number, default: 0},

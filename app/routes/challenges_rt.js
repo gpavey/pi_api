@@ -27,7 +27,7 @@ function setup(app) {
       if (err)
         res.send(err);
 
-      res.json({ message: 'Challenge created!' });
+        res.json({ message: 'Challenge created!' });
     })
   }
 
@@ -35,7 +35,6 @@ function setup(app) {
     Challenge.find(function(err, challenges) {
       if (err)
         res.send(err);
-
       res.json(challenges);
     });
   }

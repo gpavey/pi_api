@@ -1,14 +1,16 @@
 // public modules
 var express    = require('express');
 var path       = require('path');
-var bodyParser = require('body-parser');
+//var bodyParser = require('body-parser');
+var multer     = require('multer')
 var mongoose   = require('mongoose');
 var fs         = require("fs");
 
 var routePath  = "./app/routes/";
 
 var app        = express();
-app.use(bodyParser());
+//app.use(bodyParser());
+app.use(multer({ dest: './uploads/'}));
 
 // Added to allow cross-domain request from the UI
 app.use(function(req,res, next){
@@ -22,9 +24,9 @@ fs.readdirSync(routePath).forEach(function(file) {
     require(route)(app);
 });
 
-
-mongoose.connect('mongodb://proveit:letmein@ds037607.mongolab.com:37607/proveit'); // connect to our database
-mongoose.connect('localhost/provit')
+  
+//mongoose.connect('mongodb://proveit:letmein@ds037607.mongolab.com:37607/proveit'); // connect to our database
+mongoose.connect('localhost/proveit')
 
 var port = process.env.PORT || 8080;    // set our port
 
